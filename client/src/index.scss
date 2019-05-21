@@ -1,0 +1,108 @@
+// --------------------
+// Definition of variables
+$primary: #32c3ff;
+
+
+// ----------------------------------------
+// To install Boostrap:
+// 1) Run in the client folder: $ npm i bootstrap
+// 2) Import bootstrap with the following line
+// @import '../node_modules/bootstrap/scss/bootstrap.scss';
+// 
+// To install Reactstrap:
+// 1) Run in the client folder: $ npm i reactstrap
+// 2) Go to the official documentation and take some examples: https://reactstrap.github.io/
+// import { Button } from 'reactstrap';
+// <Button color="danger">Danger!</Button>
+// ----------------------------------------
+
+
+// --------------------
+// Style reusable for all components
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway',sans-serif;
+}
+
+.center {
+text-align: center;
+}
+
+.catbut {
+ padding: 40px 0px;
+}
+
+.navlogo {
+  font-size: 36px;
+}
+
+
+.login-modal {
+  align-self: center;
+}
+
+.modal-header {
+  border-bottom: 0px;
+}
+
+.iconspacing {
+  padding-right: 10px;
+}
+
+.herocont {
+  text-align: center;
+}
+
+@media (min-width: 1281px) {
+  
+  .herocont {
+    width: 50%;
+  }
+  
+}
+
+
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 300px;
+    margin: 1.75rem auto;
+}
+}
+
+.navbar-collapse {
+  text-align: center;
+}
+
+.homeHero {
+  height: 100vh;
+  background-image: url(https://designdepotfurniture.com/wp-content/uploads/2019/01/design_depot_cover_jan_2019.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.32);
+}
+
+.herocont h1 {
+  font-weight: 900;
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.17);
+}
+
+.homeHero:after{
+  background:rgba(0, 0, 0, 0.55)
+}
+
+
+.loginbtn {
+  width: 250px;
+}
+
+.cardhome {
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.62);
+  color: white;
+  text-align: center;
+}
+
