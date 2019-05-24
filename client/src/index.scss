@@ -106,3 +106,148 @@ text-align: center;
   text-align: center;
 }
 
+.dashContain {
+  padding-top: 50px;
+}
+
+.dashimg {
+  width: 200px;
+}
+
+.dropdown-menu {
+  text-align: center;
+}
+
+.searchHold {
+  padding: 50px 0px;
+}
+
+.searchcont {
+  background-image: url(https://www.gruppoinventa.it/wp-content/uploads/2018/02/NIC01.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.32);
+  color: white;
+  padding: 100px 0px;
+}
+
+.searchinput {
+    margin: 100px 0px;
+    border-radius: 30px;
+    background: #d0d0d0cc;
+    color: white;
+}
+
+.dashcontain {
+  padding: 50px;
+}
+
+.uploadformcont {
+  justify-content: center;
+  display: flex;
+  padding: 150px 100px;
+  flex-direction: column;
+}
+
+.formhead {
+  padding-bottom: 50px
+}
+
+.imguploadhold {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+img.uploadpw {
+  border: 2px solid #00000024;
+  max-width: 50%;
+}
+
+.fileupload {
+  margin: 50px 0px;
+}
+
+.react-tagsinput {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding-left: 5px;
+  padding-top: 5px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.react-tagsinput--focused {
+  border-color: #a5d24a;
+}
+
+.react-tagsinput-tag {
+  background-color: #cde69c;
+  border-radius: 2px;
+  border: 1px solid #a5d24a;
+  color: #638421;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.react-tagsinput-remove {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.react-tagsinput-tag a::before {
+  content: " ×";
+}
+
+.react-tagsinput-input {
+  background: transparent;
+  border: 0;
+  color: #777;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  margin-top: 1px;
+  outline: none;
+  padding: 5px;
+  width: 80px;
+}
+
+
+
+.stepbtn {
+    margin:30px;
+    width: 90px;
+}
+
+.forminputs {
+  border-radius:30px;
+}
+
+.stepnav {
+  justify-content: space-around;
+  padding: 50px 0px
+}
+
+.formhold {
+  box-sizing: content-box;
+}
+
+
+.searchpg {
+    background-image: url(https://www.gruppoinventa.it/wp-content/uploads/2018/02/NIC01.jpg);
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.32);
+    padding: 100px;
+}

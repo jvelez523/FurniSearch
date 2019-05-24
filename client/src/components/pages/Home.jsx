@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Jumbotron, Container, Button, Card, Row, Col } from "react-bootstrap";
 import Mostrecent from "../Mostrecent";
+import Searchhome from "../Searchhome";
 
 export default class Home extends Component {
   // constructor(props) {
@@ -19,6 +20,11 @@ export default class Home extends Component {
         <Container>
         <Mostrecent />
         </Container>
+        <div className="searchcont">
+        <Container>
+        <Searchhome />
+        </Container>
+        </div>
       </React.Fragment>
     );
   }
