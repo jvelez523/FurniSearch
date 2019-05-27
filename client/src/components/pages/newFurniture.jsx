@@ -6,6 +6,7 @@ import Step2 from "../furnitureform/Step2";
 
 
 
+
 export default class newFurniture extends Component {
   state = {
     roomname: "",
@@ -14,6 +15,10 @@ export default class newFurniture extends Component {
     tags: [],
     tag: ''
   };
+
+
+  
+
 
   handleChange = event => {
     const {name, value} = event.target
