@@ -9,7 +9,7 @@ cloudinary.config({
 });
 
 var storage = cloudinaryStorage({
-  cloudinary: cloudinary,
+  cloudinary,
   folder: 'Furniture', // The name of the folder in cloudinary
   allowedFormats: ['jpg', 'png'],
   filename: function (req, file, cb) {

@@ -20,7 +20,7 @@ export default class Sidecontent extends Component {
       <div>
         {/* <Switch> */}
         {/* <Fade  appear={true}> */}
-          <Route path="/dashboard/profile" exact component={Profile} />
+          <Route path="/dashboard/profile" exact component={() => <Profile user={this.props.user} />} />
           {/* </Fade> */}
           <Route path="/dashboard/yourrooms" exact component={Yourroom} />
           <Route path="/dashboard/favorites" exact component={Favorites} />

@@ -8,7 +8,11 @@ export default class Dashboard extends Component {
   state = {
     user: {}
   }
+
+
   render() {
+
+    console.log(this.props.user)
     return (
       <div className="dashcontain">
       {/* <Container className="dashContain"> */}
@@ -17,7 +21,7 @@ export default class Dashboard extends Component {
             <Sidenav />
           </Col>
           <Col className="center">
-            <Sidecontent />
+            <Sidecontent user={this.props.user}/>
           </Col>
         </Row>
         {/* </Container> */}

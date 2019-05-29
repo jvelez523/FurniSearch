@@ -9,7 +9,9 @@ export default class Home extends Component {
   //   this.state = {
   //   }
   // }
+
   render() {
+    console.log(this)
     return (
       <React.Fragment>
         <Jumbotron fluid className="homeHero">

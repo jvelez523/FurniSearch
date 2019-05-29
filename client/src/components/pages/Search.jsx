@@ -3,6 +3,7 @@ import { Form, Button, Fade } from "react-bootstrap";
 
 export default class Search extends Component {
   render() {
+    console.log(this)
     return (
       <Fade appear={true} in={true}>
       <div className="searchpg">

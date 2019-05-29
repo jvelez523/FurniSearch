@@ -9,17 +9,17 @@ import {
   DropdownButton,
   Dropdown
 } from "react-bootstrap";
-import withFirebaseAuth from "react-with-firebase-auth";
-import * as firebase from "firebase/app";
-import "firebase/auth";
-import firebaseConfig from "../firebaseConfig";
+// import withFirebaseAuth from "react-with-firebase-auth";
+// import * as firebase from "firebase/app";
+// import "firebase/auth";
+// import firebaseConfig from "../firebaseConfig";
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const firebaseAppAuth = firebaseApp.auth();
-const providers = {
-  googleProvider: new firebase.auth.GoogleAuthProvider(),
-  facebookProvider: new firebase.auth.FacebookAuthProvider()
-};
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
+// const firebaseAppAuth = firebaseApp.auth();
+// const providers = {
+//   googleProvider: new firebase.auth.GoogleAuthProvider(),
+//   facebookProvider: new firebase.auth.FacebookAuthProvider()
+// };
 
 class Navigation extends Component {
   state = { show: false };
@@ -32,17 +32,25 @@ class Navigation extends Component {
     this.setState({ show: true });
   };
 
-  render() {
-    const { user, signOut, signInWithGoogle, signInWithFacebook } = this.props;
+  signingoogle = () => {
+    this.props.google()
+    .then((data)=> {
+      console.log("this is the datapush function")
+      this.props.datapush()
+    })
+  }
 
-    console.log(user);
+  render() {
+    // const { user, signOut, signInWithGoogle, signInWithFacebook } = this.props;
+    
+    console.log(this.props.user);
 
     return (
       <div>
         {/* //Navigation Bar */}
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
           <Navbar.Brand className="navlogo">
-            <Link to="/">
+            <Link to="/" onClick={window.location.reload}>
               <i className="fas fa-chair iconspacing" />
               Furni-Search
             </Link>
@@ -55,17 +63,22 @@ class Navigation extends Component {
               </Nav.Link>
 
               <Nav.Link href="#features">
+              {this.props.user ? (
                 <Link to="/postfurn#step1">Post Furniture</Link>
+              ) : (
+                <Link to="#" onClick={this.handleShow}>Post Furniture</Link>
+              )
+              }
               </Nav.Link>
               <Nav.Link href="#pricing">
                 <Link to="/search">Search</Link>
               </Nav.Link>
             </Nav>
             <Nav>
-              {user ? (
+              {this.props.user ? (
                 <DropdownButton
                   id="dropdown-basic-button"
-                  title={`Hi, ${user.displayName}`}
+                  title={`Hi, ${this.props.user.displayName}`}
                   variant="outline-primary"
                 >
                   <Dropdown.Item>
@@ -73,7 +86,9 @@ class Navigation extends Component {
                       to={{
                         pathname: "/dashboard/profile",
                         state: {
-                          user: user.displayName
+                          user: this.props.user.displayName,
+                          email: this.props.user.email,
+                          picture: this.props.user.photoURL
                         }
                       }}
                     >
@@ -83,7 +98,7 @@ class Navigation extends Component {
                   <Dropdown.Item href="#/action-2">
                     Post Furniture
                   </Dropdown.Item>
-                  <Dropdown.Item onClick={signOut}>Logout</Dropdown.Item>
+                  <Dropdown.Item onClick={this.props.signOut}>Logout</Dropdown.Item>
                 </DropdownButton>
               ) : (
                 <Button variant="outline-primary" onClick={this.handleShow}>
@@ -103,15 +118,18 @@ class Navigation extends Component {
             <Modal.Title>Log In/Sign Up</Modal.Title>
           </Modal.Header>
           <Modal.Body className="login-modal">
-            {user ? (
-              <button onClick={signOut}>Sign out</button>
+            {this.props.user ? (
+              <button onClick={this.props.signOut}>Sign out</button>
             ) : (
               <div className="loginbtngroup">
                 <Button
                   variant="outline-danger"
                   size="lg"
                   className="loginbtn"
-                  onClick={signInWithGoogle}
+                  onClick={event => {
+                  this.signingoogle();
+                  this.handleClose();
+                }}
                 >
                   <i className="fab fa-google iconspacing" />
                   Log in with Google
@@ -125,15 +143,15 @@ class Navigation extends Component {
           </Modal.Body>
           <h4 className="center">Or</h4>
           <Modal.Body className="login-modal">
-            {user ? (
-              <button onClick={signOut}>Sign out</button>
+            {this.props.user ? (
+              <button onClick={this.props.signOut}>Sign out</button>
             ) : (
               <Button
                 size="lg"
                 variant="outline-primary"
                 className="loginbtn"
                 onClick={event => {
-                  signInWithFacebook();
+                  this.props.facebook();
                   this.handleClose();
                 }}
               >
@@ -152,7 +170,4 @@ class Navigation extends Component {
   }
 }
 
-export default withFirebaseAuth({
-  providers,
-  firebaseAppAuth
-})(Navigation);
+export default Navigation
