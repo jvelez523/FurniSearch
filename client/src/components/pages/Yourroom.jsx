@@ -1,12 +1,33 @@
 import React, { Component } from "react";
 import { Card, CardDeck, Container, Fade } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default class Yourroom extends Component {
   render() {
     return (
       <div className="roomsholder">
-      <Fade appear={true} in={true}>
-<Container>
+      <Container>
+      <CardDeck>
+        {/* <Fade appear={true} in={true}> */}
+          {this.props.roomdata.map((room, index) => (
+            <Card className="shadow">
+              <Card.Img variant="top" src={room.imgurl} />
+              <Card.Body>
+                <Card.Title>{room.roomname}</Card.Title>
+                <Card.Text>
+                  {room.roomdesc}
+                </Card.Text>
+              </Card.Body>
+              <Link to="/">
+              <Card.Footer className="userfooter">
+                <p>Delete</p>
+              </Card.Footer>
+              </Link>
+            </Card>
+          ))}
+          </CardDeck>
+          </Container>
+          {/* <Container>
         <CardDeck>
           <Card>
             <Card.Img variant="top" src="holder.js/100px160" />
@@ -50,8 +71,8 @@ export default class Yourroom extends Component {
             </Card.Footer>
           </Card>
         </CardDeck>
-        </Container>
-        </Fade>
+        </Container> */}
+        {/* </Fade> */}
       </div>
     );
   }

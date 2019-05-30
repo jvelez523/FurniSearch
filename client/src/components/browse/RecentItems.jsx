@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { Row, Col, Card, Button, Badge, Fade, CardColumns } from "react-bootstrap";
 import axios from "axios";
 import { baseURL } from "../../api";
+import { Link } from "react-router-dom";
 
 export default class RecentItems extends Component {
   state = {
@@ -22,13 +23,15 @@ export default class RecentItems extends Component {
 
   render() {
     return (
+      <Fade appear={true} in={true}>
       <div>
         <h1 className="center">Recently Uploaded Rooms</h1>
         <Row>
+        <CardColumns>
           {this.state.housedata.map((house, index) => (
-            <Col xs="12" lg="4" className="cardcol">
+          
             <Card className="text-center shadow">
-              <Card.Header>{house.roomname}</Card.Header>
+              <Card.Header><h5>{house.roomname}</h5></Card.Header>
               <Card.Img
                   src={house.imgurl}
                   alt="Card image"
@@ -48,25 +51,31 @@ export default class RecentItems extends Component {
               </Card.Body>
               <Card.Footer className="text-muted">
                 <Row>
-                  <Col>
-                    <Button className="socbutton">
+                <Link to="/" className="socbtn">
+                  <Col className="likebtn" >
+                    
                       <i class="far fa-thumbs-up" />
                       Like
-                    </Button>
+
                   </Col>
-                  <Col>
-                    <Button variant="danger" className="socbutton">
+                  </Link>
+                  <Link to="/" className="socbtn">
+                  <Col className="favbtn">
+                    
                       <i class="far fa-heart" />
                       Favorite
-                    </Button>
+
                   </Col>
+                  </Link>
                 </Row>
               </Card.Footer>
             </Card>
-          </Col>
+         
           ))}
+          </CardColumns>
         </Row>
       </div>
+      </Fade>
     );
   }
 }

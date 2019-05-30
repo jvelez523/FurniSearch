@@ -22,10 +22,12 @@ export default class Sidecontent extends Component {
         {/* <Fade  appear={true}> */}
           <Route path="/dashboard/profile" exact component={() => <Profile user={this.props.user} />} />
           {/* </Fade> */}
-          <Route path="/dashboard/yourrooms" exact component={Yourroom} />
+          <Route path="/dashboard/yourrooms" exact component={() => <Yourroom roomdata={this.props.roomdata} />} />
           <Route path="/dashboard/favorites" exact component={Favorites} />
         {/* </Switch> */}
       </div>
     );
   }
 }
+
+// roomdata={this.props.roomdata}

@@ -288,3 +288,48 @@ img.uploadpw {
 .browsecatimg {
   height: 175px;
 }
+
+.card-footer {
+  padding: 0px 15px;
+}
+
+.likebtn {
+  background-color: #4582ec;
+  padding: 10px;
+  color:  white;
+}
+
+.favbtn {
+  background-color: #d9534f;
+  padding: 10px;
+  color: white;
+}
+
+.homecard {
+  height: 174px;
+}
+
+.socbtn {
+  width: 50%
+}
+
+.socbtn:hover {
+  text-decoration: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.8s
+}
+
+.userfooter {
+  background-color: #d9534f;
+  color: white;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.uploadscont {
+  padding-top: 50px
+}
+
+.card-columns {
+  margin: 20px;
+}

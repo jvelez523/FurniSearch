@@ -1,17 +1,25 @@
 import React, { Component } from 'react'
-import { Row, Col, Card, Fade } from "react-bootstrap";
+import { Row, Col, Card, Fade, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export default class Categories extends Component {
+
+
+export default class Byroom extends Component {
+
+  componentWillReceiveProps(props){
+    console.log(props)
+  }
   render() {
+    console.log(this)
     return (
       <Fade appear={true} in={true}>
+      <Container>
       <div>
               <h1 className="center">Browse</h1>
           <Row className="catcont">
             
             <Col xs="6" lg="3" className="cathead">
-            <Link  to="/byroom">
+            <Link  to="/browse/byroom">
               <Card className="text-white browsecard shadow">
                 <Card.Img
                   src="https://cdn.vox-cdn.com/thumbor/0__zWQZmmmwHA5OjBTAchz6_sBw=/0x0:3000x2000/1200x800/filters:focal(1260x760:1740x1240)/cdn.vox-cdn.com/uploads/chorus_image/image/62922957/4854_Alonzo_Ave__Encino_FInals_34.0.jpg"
@@ -63,6 +71,7 @@ export default class Categories extends Component {
             </Col>
           </Row>
       </div>
+      </Container>
       </Fade>
     )
   }

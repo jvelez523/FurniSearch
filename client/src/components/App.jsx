@@ -16,6 +16,7 @@ import "firebase/auth";
 import firebaseConfig from "../firebaseConfig";
 import axios from "axios";
 import {baseURL} from '../api'
+import Byroom from "./pages/Byroom";
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
@@ -41,6 +42,11 @@ class App extends Component {
   componentDidMount() {
     // console.log("This is the user from app.js", user)
   }
+  componentWillReceiveProps(props){
+    console.log('in here ',props)
+  }
+
+
 
   onlogin = data => {
     let body = {

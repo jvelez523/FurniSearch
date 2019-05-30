@@ -7,8 +7,7 @@ export default class Browse extends Component {
   render() {
     return (
       <Fade appear={true} in={true}>
-        <Container>
-        <Categories />
+        <Container className="uploadscont">
         <RecentItems />
         </Container>
       </Fade>
