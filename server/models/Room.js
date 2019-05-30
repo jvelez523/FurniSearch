@@ -7,7 +7,7 @@ const roomSchema = new Schema({
   roomdesc: String,
   imgurl: String,
   likes: Number,
-  user: String, 
+  uid: String, 
   tags: [],
   furniture: []
 }, {

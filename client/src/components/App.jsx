@@ -15,8 +15,12 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "../firebaseConfig";
 import axios from "axios";
+import {baseURL} from '../api'
+
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
+
+console.log(baseURL)
 const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
   facebookProvider: new firebase.auth.FacebookAuthProvider()
@@ -47,7 +51,7 @@ class App extends Component {
 
     axios({
       method: "post",
-      url: "/api/signup",
+      url: `${baseURL}/signup`,
       data: body
     })
       .then(response => {

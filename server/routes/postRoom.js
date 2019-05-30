@@ -13,8 +13,8 @@ const parser = require('../configs/cloudinary')
 
 // Route to add a Room
 router.post('/addroom', (req, res, next) => {
-  let { roomname, roomdesc, imgurl, tags, roomtype, furniture } = req.body
-  Room.create({ roomname, roomdesc, imgurl, tags, roomtype, furniture })
+  let { roomname, roomdesc, imgurl, tags, roomtype, furniture, uid } = req.body
+  Room.create({ roomname, roomdesc, imgurl, tags, roomtype, furniture, uid })
     .then(room => {
       res.json({
         success: true,

@@ -4,7 +4,7 @@ import { Card, CardDeck, Container, Fade, Form } from "react-bootstrap";
 import Step1 from "../furnitureform/Step1";
 import Step2 from "../furnitureform/Step2";
 import axios from "axios";
-import api from "../../api";
+import {baseURL} from '../../api'
 //{withCredentials:true}
 axios.defaults.withCredentials = true;
 
@@ -41,7 +41,7 @@ export default class NewFurniture extends Component {
   handleUpload = e => {
     console.log("file to upload", e);
     axios
-    .post('/api/picture', e )
+    .post(`${baseURL}/picture`, e )
     .then((response) => {
       console.log("This is the response================", response);
       this.setState({
@@ -74,7 +74,7 @@ handleFile = async e => {
 
     axios({
       method: "post",
-      url: "/api/addroom",
+      url: `${baseURL}/addroom`,
       data: body
     })
       .then(response => {
