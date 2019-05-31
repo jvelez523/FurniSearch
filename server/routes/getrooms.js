@@ -65,6 +65,21 @@ router.get("/delete/:_id", (req,res,next)=> {
   // console.log("This is the game id for GLIST =====>",req.params._id)
 })
 
+router.post('/search', (req, res, next) => {
+  let { search } = req.body
+  console.log(req.body, "===================", req.params)
+  Room.find({$text: {$search: search}})
+    .then(data => {
+      res.json({
+        success: true,
+        data
+      });
+      console.log(data)
+    })
+    .catch(err => next(err))
+
+});
+
 
 
 

@@ -17,5 +17,6 @@ const roomSchema = new Schema({
     }
   });
 
+roomSchema.index({'$**': 'text'});
 const Room = mongoose.model('Room', roomSchema);
 module.exports = Room;

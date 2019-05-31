@@ -120,6 +120,7 @@ text-align: center;
 
 .searchHold {
   padding: 50px 0px;
+  height: 300px
 }
 
 .searchcont {
@@ -246,7 +247,7 @@ img.uploadpw {
 .searchpg {
     background-image: url(https://www.gruppoinventa.it/wp-content/uploads/2018/02/NIC01.jpg);
     background-size: cover;
-    height: 100vh;
+    background-attachment: fixed;
     color: white;
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.32);
     padding: 100px;
@@ -332,4 +333,8 @@ img.uploadpw {
 
 .card-columns {
   margin: 20px;
+}
+
+.searchcard {
+  color: #4c4c4c;
 }
