@@ -1,8 +1,32 @@
 import React, { Component } from "react";
 import { Card, CardDeck, Container, Fade } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import {baseURL} from '../../api'
+import { Redirect } from 'react-router';
 
 export default class Yourroom extends Component {
+
+
+
+delete = (id) =>{
+  console.log("im running")
+
+  axios
+    .get(`${baseURL}/delete/${id}`)
+    .then(response => {
+      console.log("This is the response================", response);
+
+    })
+    .catch(err => console.error(err))
+    this.setState(this.state)
+}
+
+
+
+
+
+
   render() {
     return (
       <div className="roomsholder">
@@ -18,7 +42,7 @@ export default class Yourroom extends Component {
                   {room.roomdesc}
                 </Card.Text>
               </Card.Body>
-              <Link to="/">
+              <Link to={`/browse`} onClick={ () => this.delete(room._id) }>
               <Card.Footer className="userfooter">
                 <p>Delete</p>
               </Card.Footer>

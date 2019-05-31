@@ -47,4 +47,26 @@ router.post('/myrooms', (req, res, next) => {
 
 });
 
+router.get("/delete/:_id", (req,res,next)=> {
+  console.log("im happening!")
+  roomid = req.params._id
+  // User.findById(req.cookies.currentuser._id).then(user=>{
+  //   glist.findByIdAndDelete(gameid).then((game) => {
+  //     user.playing.splice(user.playing.indexOf(game), 1);
+  //     user.save();
+  //     res.redirect('back');
+  //   })
+  // })
+  Room.findByIdAndDelete(roomid)
+  .then(room => {
+    console.log("The room has been deleted ========",room)
+   
+  })
+  // console.log("This is the game id for GLIST =====>",req.params._id)
+})
+
+
+
+
+
 module.exports = router;

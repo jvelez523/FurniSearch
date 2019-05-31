@@ -13,6 +13,8 @@ export default class Dashboard extends Component {
   }
 
   componentDidMount(){
+
+    
     let body = {
       uid: this.props.user.uid
     };

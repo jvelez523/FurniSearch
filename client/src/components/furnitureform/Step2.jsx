@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Button, Card } from "react-bootstrap";
 import TagsInput from "react-tagsinput";
-import axios from 'axios'
-import api from '../../api'
+
 
 
 export default class Step2 extends Component {
