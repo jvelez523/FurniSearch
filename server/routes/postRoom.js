@@ -2,14 +2,6 @@ const express = require('express');
 const Room = require('../models/Room')
 const router = express.Router();
 const parser = require('../configs/cloudinary')
-// Route to get all countries
-// router.get('/', (req, res, next) => {
-//   Country.find()
-//     .then(countries => {
-//       res.json(countries);
-//     })
-//     .catch(err => next(err))
-// });
 
 // Route to add a Room
 router.post('/addroom', (req, res, next) => {
