@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import StepWizard from "react-step-wizard";
-import { Card, CardDeck, Container, Fade, Form } from "react-bootstrap";
+import {  Container, Fade, Form } from "react-bootstrap";
 import Step1 from "../furnitureform/Step1";
 import Step2 from "../furnitureform/Step2";
 import axios from "axios";

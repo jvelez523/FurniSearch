@@ -3,7 +3,6 @@ import { Card, CardDeck, Container, Fade } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import {baseURL} from '../../api'
-import { Redirect } from 'react-router';
 
 export default class Yourroom extends Component {
 

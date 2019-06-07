@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Jumbotron, Container, Button, Card, Row, Col } from "react-bootstrap";
+import { Jumbotron, Container } from "react-bootstrap";
 import Mostrecent from "../Mostrecent";
 import Searchhome from "../Searchhome";
 

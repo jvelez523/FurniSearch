@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 
 import axios from "axios";
 import {baseURL} from '../../api'
-import Searchresults from '../Searchresults';
-import { Row, Col, Card, Button, Badge, Fade, CardColumns, Form } from "react-bootstrap";
+import { Row, Col, Card,  Badge, Fade, CardColumns, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default class Search extends Component {
